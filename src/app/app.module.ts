@@ -7,6 +7,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroEditComponent } from './heroes/hero-edit/hero-edit.component';
 import { RouterOutlet } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { RouterOutlet } from '@angular/router';
     DashboardComponent,
     HeroEditComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterOutlet],
+  imports: [BrowserModule, FormsModule, RouterOutlet, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

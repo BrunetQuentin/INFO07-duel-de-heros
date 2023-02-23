@@ -12,12 +12,10 @@ export class HeroesComponent {
 
   constructor(private heroService: HeroService) {}
 
-  selectedHero?: IHero;
-  onSelect(hero: IHero): void {
-    this.selectedHero = hero;
-  }
   getHeroes(): void {
-    this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
+    this.heroService.getHeroes().subscribe((heroes) => {
+      this.heroes = heroes;
+    });
   }
   ngOnInit(): void {
     this.getHeroes();

@@ -1,6 +1,6 @@
-<router-outlet name="dashboard">
-  <app-dashboard></app-dashboard>
-</router-outlet>
-<router-outlet name="heroes">
-  <app-heroes></app-heroes>
-</router-outlet>
+<h1>{{ title }}</h1>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+<router-outlet></router-outlet>
