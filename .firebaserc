@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "info07-duel-de-heros": {
+      "hosting": {
+        "INFO07-duel-de-heros": [
+          "info07-duel-de-heros"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "info07-duel-de-heros"
+  }
+}

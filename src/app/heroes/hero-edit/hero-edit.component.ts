@@ -19,7 +19,7 @@ export class HeroEditComponent {
   getHero(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.heroService.getHeroById(+id!).subscribe((hero) => {
+      this.heroService.getHeroById(id!).subscribe((hero) => {
         this.hero = hero;
       });
     }

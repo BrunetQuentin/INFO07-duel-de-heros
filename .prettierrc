@@ -1,8 +1,10 @@
 {
-  "tabWidth": 2,
-  "useTabs": false,
-  "semi": true,
+  "bracketSameLine": true,
+  "htmlWhitespaceSensitivity": "ignore",
   "jsxSingleQuote": false,
+  "semi": true,
+  "singleAttributePerLine": false,
   "singleQuote": true,
-  "htmlWhitespaceSensitivity": "css"
+  "tabWidth": 2,
+  "useTabs": false
 }
