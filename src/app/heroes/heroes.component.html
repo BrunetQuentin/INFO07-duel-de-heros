@@ -1,10 +1,31 @@
-<h2>My Heroes</h2>
-
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/hero/{{ hero.id }}">
-      <span class="badge">{{ hero.id }}</span>
-      <span class="name">{{ hero.name }}</span>
-    </a>
-  </li>
-</ul>
+<a [routerLink]="['new']" routerLinkActive="router-link-active">
+  <div class="add-button">
+    <fa-icon [icon]="faPlus" class="fa-2x"></fa-icon>
+  </div>
+</a>
+<div id="heroes">
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hero of heroes">
+        <td>
+          <a routerLink="/hero/{{ hero.id }}">{{ hero.id }}</a>
+        </td>
+        <td>{{ hero.name }}</td>
+        <td>
+          <a
+            [routerLink]="[hero.id, 'edit']"
+            routerLinkActive="router-link-active">
+            <fa-icon [icon]="faEdit" class="fa-lg"></fa-icon>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

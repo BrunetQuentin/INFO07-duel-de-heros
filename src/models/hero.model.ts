@@ -72,27 +72,3 @@ export interface IHero {
   dodge?: number;
   items?: any[];
 }
-
-export const HEROES: IHero[] = [
-  {
-    id: '1',
-    name: 'Archer',
-    type: HeroTypes.ARCHER,
-    health: 100,
-    dodge: 0,
-  },
-  {
-    id: '2',
-    name: 'Assassin',
-    type: HeroTypes.ASSASSIN,
-    health: 100,
-    dodge: 0,
-  },
-  {
-    id: '3',
-    name: 'Cleric',
-    type: HeroTypes.CLERIC,
-    health: 100,
-    dodge: 0,
-  },
-];
