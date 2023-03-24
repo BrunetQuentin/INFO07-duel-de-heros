@@ -45,4 +45,12 @@ export class HeroService {
       );
     return hero;
   }
+
+  createHero(hero: IHero): void {
+    this.heroCollection.add(hero);
+  }
+
+  deleteHero(hero: IHero): void {
+    this.heroCollection.doc(hero.id).delete();
+  }
 }

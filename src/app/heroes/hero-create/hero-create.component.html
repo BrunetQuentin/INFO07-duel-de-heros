@@ -1,11 +1,37 @@
 <div *ngIf="hero">
   <h2>Create a new hero</h2>
   <div>
-    <label for="hero-name">Hero name:</label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
+    <div>
+      <label for="hero-name">Hero name:</label>
+      <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
+    </div>
+    <div>
+      <label for="hero-speed">Hero speed:</label>
+      <input id="hero-speed" [(ngModel)]="hero.speed" placeholder="speed" />
+    </div>
 
-    <label for="hero-dodge">Hero dodge:</label>
-    <input id="hero-dodge" [(ngModel)]="hero.dodge" placeholder="dodge" />
+    <div>
+      <label for="hero-type">Hero type:</label>
+      <div>
+        <span *ngIf="nbrOfClasses === 1">Expert</span>
+        <span *ngIf="nbrOfClasses === 2">Spécialiste</span>
+        <span *ngIf="nbrOfClasses === 3">Généraliste</span>
+      </div>
+      <div *ngFor="let c of classArray">
+        <select
+          *ngIf="hero.class"
+          [(ngModel)]="hero.class[c]"
+          id="hero-class"
+          (change)="onClassChange()">
+          <option
+            *ngFor="let class of classes"
+            [value]="class"
+            [disabled]="hero.class.includes(class)">
+            {{ class }}
+          </option>
+        </select>
+      </div>
+    </div>
 
     <button (click)="createHero()">Create</button>
   </div>

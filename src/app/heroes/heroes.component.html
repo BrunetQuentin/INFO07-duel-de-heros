@@ -4,28 +4,5 @@
   </div>
 </a>
 <div id="heroes">
-  <table>
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let hero of heroes">
-        <td>
-          <a routerLink="/hero/{{ hero.id }}">{{ hero.id }}</a>
-        </td>
-        <td>{{ hero.name }}</td>
-        <td>
-          <a
-            [routerLink]="[hero.id, 'edit']"
-            routerLinkActive="router-link-active">
-            <fa-icon [icon]="faEdit" class="fa-lg"></fa-icon>
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <app-hero *ngFor="let hero of heroes" [hero]="hero"></app-hero>
 </div>

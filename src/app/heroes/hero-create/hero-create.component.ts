@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
 import { HeroTypes, IHero } from 'src/models/hero.model';
 import { HeroService } from 'src/service/hero.service';
+import { HeroSource } from 'src/service/hero.source';
 
 @Component({
   selector: 'app-hero-create',
@@ -9,26 +9,43 @@ import { HeroService } from 'src/service/hero.service';
   styleUrls: [],
 })
 export class HeroCreateComponent {
-  //// USE THE NG CREATE ////
   hero?: IHero;
-  types?: HeroTypes[];
+  classes?: HeroTypes[];
+
+  classArray = [0, 1, 2];
+
+  nbrOfClasses: number = 0;
 
   constructor(
-    private route: ActivatedRoute,
-    private heroService: HeroService
+    private heroService: HeroService,
+    private heroSource: HeroSource
   ) {}
 
   ngOnInit(): void {
     // get all types from HeroTypes
-    this.types = Object.values(HeroTypes);
+    this.classes = Object.values(HeroTypes);
 
     this.hero = {
+      image: '',
       name: '',
-      dodge: 0,
+      class: [HeroTypes.UNDEFINED, HeroTypes.UNDEFINED, HeroTypes.UNDEFINED],
+      items: [],
       health: 0,
-      type: HeroTypes.ARCHER,
+      speed: 0,
     };
   }
 
-  createHero(): void {}
+  createHero(): void {
+    if (this.hero) {
+      this.heroService.createHero(this.hero);
+    }
+  }
+
+  onClassChange(): void {
+    if (this.hero?.class !== undefined) {
+      this.nbrOfClasses = this.hero?.class?.filter(
+        (heroClass) => heroClass !== HeroTypes.UNDEFINED
+      ).length;
+    }
+  }
 }

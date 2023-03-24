@@ -1,8 +1,23 @@
-<div *ngIf="hero">
-  <h2>{{ hero.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{ hero.id }}</div>
+<div
+  *ngIf="hero"
+  style="background-image: url('{{ hero.image }}')"
+  class="hero">
+  <h2>{{ hero.name | uppercase }}</h2>
+
+  <p>
+    <fa-icon [icon]="faHeart" class="fa-2x"></fa-icon>
+    {{ hero.health }}
+  </p>
+  <p>
+    <fa-icon [icon]="faPersonRunning" class="fa-2x"></fa-icon>
+    {{ hero.speed }}
+  </p>
+
+  <div class="items">
+    <a *ngFor="let item of hero.items"><img src="" /></a>
+  </div>
+
   <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
+    <a *ngFor="let class of hero.class"><img src="" /></a>
   </div>
 </div>

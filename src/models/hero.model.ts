@@ -1,6 +1,7 @@
 import { Serializable } from 'src/utils/serializable';
 
 export enum HeroTypes {
+  UNDEFINED = '',
   WIZARD = 'WIZARD',
   WARRIOR = 'WARRIOR',
   ROGUE = 'ROGUE',
@@ -67,8 +68,9 @@ export const HeroSpecs: { [key in HeroTypes]?: SpecsType } = {
 export interface IHero {
   id?: string;
   name?: string;
-  type?: HeroTypes;
+  class?: HeroTypes[];
   health?: number;
-  dodge?: number;
+  speed?: number;
   items?: any[];
+  image?: string;
 }

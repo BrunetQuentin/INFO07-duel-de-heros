@@ -13,6 +13,8 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
+import { HeroCreateComponent } from './heroes/hero-create/hero-create.component';
+import { HeroComponent } from './heroes/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { FormsModule } from '@angular/forms';
     HeroesComponent,
     DashboardComponent,
     HeroEditComponent,
+    HeroCreateComponent,
+    HeroComponent,
   ],
   imports: [
     BrowserModule,
