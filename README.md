@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Deploy
+ng build --configuration production --base-href /~brunetqu/info7/
+scp -r info07-duel-de-heros/* brunetqu@transit.iut2.univ-grenoble-alpes.fr:~/public_html/info7
+
+
+link to the project: http://www-etu-info.iut2.upmf-grenoble.fr/~brunetqu/info7/heroes
