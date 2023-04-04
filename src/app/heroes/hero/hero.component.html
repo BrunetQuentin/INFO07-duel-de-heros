@@ -2,7 +2,23 @@
   *ngIf="hero"
   style="background-image: url('{{ hero.image }}')"
   class="hero">
-  <h2>{{ hero.name | uppercase }}</h2>
+  <div class="header">
+    <h2 class="title">{{ hero.name | uppercase }}</h2>
+    <div class="buttons">
+      <a [routerLink]="[hero.id, 'edit']">
+        <fa-icon
+          [icon]="faSquarePen"
+          class="fa-2x svg-button"
+          title="Editer le champion"></fa-icon>
+      </a>
+      <a (click)="deleteHero()">
+        <fa-icon
+          [icon]="faSquareXmark"
+          class="fa-2x svg-button"
+          title="Supprimer le hero"></fa-icon>
+      </a>
+    </div>
+  </div>
 
   <p>
     <fa-icon [icon]="faHeart" class="fa-2x"></fa-icon>
@@ -13,11 +29,20 @@
     {{ hero.speed }}
   </p>
 
+  <hr />
+  Items:
+
   <div class="items">
     <a *ngFor="let item of hero.items"><img src="" /></a>
   </div>
 
+  <hr />
+
+  Class:
   <div>
-    <a *ngFor="let class of hero.class"><img src="" /></a>
+    <a *ngFor="let class of hero.class">
+      <img src="" />
+      {{ class }}
+    </a>
   </div>
 </div>

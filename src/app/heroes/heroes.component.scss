@@ -1,5 +1,8 @@
 #heroes {
   padding: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   table {
     svg {
       cursor: pointer;

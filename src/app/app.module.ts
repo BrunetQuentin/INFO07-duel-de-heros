@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroEditComponent } from './heroes/hero-edit/hero-edit.component';
 import { RouterOutlet } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -21,7 +20,6 @@ import { HeroComponent } from './heroes/hero/hero.component';
     AppComponent,
     HeroesComponent,
     DashboardComponent,
-    HeroEditComponent,
     HeroCreateComponent,
     HeroComponent,
   ],
