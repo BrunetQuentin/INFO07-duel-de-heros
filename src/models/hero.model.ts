@@ -72,6 +72,6 @@ export type IHero = {
   items?: any[];
   image?: string;
   abilities?: {
-    [key in Abilities]?: number;
+    [key in SupportSource & AttackSource]?: number;
   };
 };

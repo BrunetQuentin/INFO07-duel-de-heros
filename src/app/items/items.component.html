@@ -1,0 +1,9 @@
+<a [routerLink]="['new']" routerLinkActive="router-link-active">
+  <div class="add-button">
+    <fa-icon [icon]="faPlus" class="fa-2x"></fa-icon>
+  </div>
+</a>
+
+<div id="items">
+  <app-item *ngFor="let item of items" [item]="item"></app-item>
+</div>

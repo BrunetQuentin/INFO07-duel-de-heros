@@ -11,7 +11,7 @@ import { HeroService } from 'src/service/hero.service';
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
-  styleUrls: [],
+  styleUrls: ['./hero.component.scss'],
 })
 export class HeroComponent {
   @Input() hero?: IHero;
@@ -21,7 +21,6 @@ export class HeroComponent {
   // function for delete an hero
   deleteHero(): void {
     if (this.hero) {
-      console.log('delete hero: ' + this.hero.name);
       this.heroService.deleteHero(this.hero);
     }
   }

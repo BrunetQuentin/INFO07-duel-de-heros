@@ -1,0 +1,29 @@
+<div
+  *ngIf="item"
+  style="background-image: url('{{ item.image }}')"
+  class="item">
+  <h2>{{ item.name }}</h2>
+  <hr />
+  Stats:
+  <div>
+    <a *ngFor="let stat of item.stats | keyvalue">
+      <span *ngIf="item.stats">{{ stat.key }}: {{ stat.value }}</span>
+    </a>
+  </div>
+  <hr />
+  Passive:
+  <div>
+    <a *ngFor="let passive of item.passives">
+      {{ passive.effect }} {{ passive.value }} tous les
+      {{ passive.interval }} tours
+    </a>
+  </div>
+  <hr />
+  Active:
+  <div>
+    <a *ngFor="let active of item.actives">
+      {{ active.effect }} {{ active.value }} pour {{ active.duration }},
+      {{ active.cooldown }} tours de recharge
+    </a>
+  </div>
+</div>

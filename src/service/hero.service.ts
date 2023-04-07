@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
 import { IHero } from 'src/models/hero.model';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-
-interface HeroInDb extends Omit<IHero, 'id'> {}
+import { ObjectInDb } from 'src/utils/type';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +21,7 @@ export class HeroService {
       .pipe(
         map((actions) =>
           actions.map((action) => {
-            const data = action.payload.doc.data() as HeroInDb;
+            const data = action.payload.doc.data() as ObjectInDb<IHero>;
             const id = action.payload.doc.id;
             return { id: id, ...data };
           })
@@ -38,7 +37,7 @@ export class HeroService {
       .snapshotChanges()
       .pipe(
         map((action) => {
-          const data = action.payload.data() as HeroInDb;
+          const data = action.payload.data() as ObjectInDb<IHero>;
           const id = action.payload.id;
           return { id: id, ...data };
         })
@@ -47,6 +46,7 @@ export class HeroService {
   }
 
   createHero(hero: IHero): void {
+    delete hero.id;
     this.heroCollection.add(hero);
   }
 

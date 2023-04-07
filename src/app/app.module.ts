@@ -14,6 +14,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { HeroCreateComponent } from './heroes/hero-create/hero-create.component';
 import { HeroComponent } from './heroes/hero/hero.component';
+import { ItemsComponent } from './items/items.component';
+import { ItemComponent } from './items/item/item.component';
+import { ItemCreateComponent } from './items/item-create/item-create.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { HeroComponent } from './heroes/hero/hero.component';
     DashboardComponent,
     HeroCreateComponent,
     HeroComponent,
+    ItemsComponent,
+    ItemComponent,
+    ItemCreateComponent,
   ],
   imports: [
     BrowserModule,
