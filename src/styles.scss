@@ -133,6 +133,11 @@ table {
   --bg-gray-800: rgb(31 41 55);
 }
 
+body {
+  background: no-repeat url("assets/background.png") center center fixed;
+  background-size: cover;
+}
+
 .add-button {
   margin: 10px;
   background-color: #4caf50;

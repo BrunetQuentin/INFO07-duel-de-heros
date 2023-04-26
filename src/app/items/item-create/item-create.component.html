@@ -3,7 +3,7 @@
     <label for="item-name">Item name:</label>
     <input id="item-name" [(ngModel)]="item.name" placeholder="name" />
   </div>
-  <div>
+  <div *ngIf="item.stats">
     <div *ngFor="let stat of item.stats | keyvalue">
       <label for="item-stat-value">Stat value:</label>
       <input
@@ -11,6 +11,5 @@
         [(ngModel)]="item.stats[stat.key]"
         placeholder="value" />
     </div>
-    // make a plus button to add a new stat
   </div>
 </div>

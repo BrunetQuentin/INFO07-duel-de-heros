@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroCreateComponent } from './heroes/hero-create/hero-create.component';
 import { HeroesComponent } from './heroes/heroes.component';
-import { ItemsComponent } from './items/items.component';
 import { ItemCreateComponent } from './items/item-create/item-create.component';
+import { ItemsComponent } from './items/items.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -23,4 +23,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+  
+}

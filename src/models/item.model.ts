@@ -4,7 +4,7 @@ export type IItem = {
   id?: string;
   name?: string;
   stats?: {
-    [key in AttackSource & SupportSource]: number;
+    [key in AttackSource & SupportSource as string]: number;
   };
   image?: string;
   passives?: passive[];
