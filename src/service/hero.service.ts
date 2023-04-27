@@ -53,4 +53,8 @@ export class HeroService {
   deleteHero(hero: IHero): void {
     this.heroCollection.doc(hero.id).delete();
   }
+
+  updateHero(hero: IHero): void {
+    this.heroCollection.doc(hero.id).update(hero);
+  }
 }

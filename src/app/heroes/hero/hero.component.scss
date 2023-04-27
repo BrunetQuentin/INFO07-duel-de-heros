@@ -1,5 +1,5 @@
 .hero {
-  background-color: rgba(255, 255, 255, 0.315);
+  background-color: rgba(94, 94, 94, 0.315);
   border: 1px solid #fff09b;
   border-radius: 0.5em;
   width: fit-content;
@@ -8,10 +8,14 @@
   margin: 1em;
   min-width: 22em;
   min-height: 15em;
+  color: white;
 
   > .header {
     display: flex;
     justify-content: space-between;
+    border-bottom: #fff09b 1px solid;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
 
     > .title {
       font-size: 1.5em;
@@ -30,6 +34,60 @@
         margin-left: 0;
       }
     }
+    .delete {
+      color: rgb(228, 46, 0);
+    }
+    .edit {
+      color: rgb(0, 131, 22);
+    }
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 120px;
+
+    > * {
+      flex: 1 1 40px;
+    }
+
+    .health {
+      color: #ff0040;
+    }
+
+    .speed {
+      color: #0099ff;
+    }
+
+    .dodge {
+      color: #009607;
+    }
+
+    .critical {
+      color: #ffbb00;
+    }
+
+    .defense {
+      color: #727272;
+    }
+
+    .strength {
+      color: #830000;
+    }
+  }
+
+  .speed,
+  .health {
+    display: flex;
+    align-items: center;
+
+    > * {
+      margin: 0.2em;
+    }
+    margin: -0.4em;
   }
 }
 

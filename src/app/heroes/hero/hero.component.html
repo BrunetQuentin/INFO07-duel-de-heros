@@ -8,26 +8,50 @@
       <a [routerLink]="[hero.id, 'edit']">
         <fa-icon
           [icon]="faSquarePen"
-          class="fa-2x svg-button"
+          class="fa-2x svg-button edit"
           title="Editer le champion"></fa-icon>
       </a>
       <a (click)="deleteHero()">
         <fa-icon
           [icon]="faSquareXmark"
-          class="fa-2x svg-button"
+          class="fa-2x svg-button delete"
           title="Supprimer le hero"></fa-icon>
       </a>
     </div>
   </div>
 
-  <p>
-    <fa-icon [icon]="faHeart" class="fa-2x"></fa-icon>
-    {{ hero.health }}
-  </p>
-  <p>
-    <fa-icon [icon]="faPersonRunning" class="fa-2x"></fa-icon>
-    {{ hero.speed }}
-  </p>
+  <div class="stats">
+    <p class="health">
+      health:
+      <fa-icon [icon]="faHeart" class="fa-2x"></fa-icon>
+      {{ hero.health }}
+    </p>
+    <p class="speed">
+      speed:
+      <fa-icon [icon]="faPersonRunning" class="fa-2x"></fa-icon>
+      {{ hero.speed }}
+    </p>
+    <p class="dodge">
+      dodge:
+      <fa-icon [icon]="faPersonFallingBurst" class="fa-2x"></fa-icon>
+      {{ hero.dodge }}
+    </p>
+    <p class="critical">
+      critical:
+      <fa-icon [icon]="faExlosion" class="fa-2x"></fa-icon>
+      {{ hero.critical }}
+    </p>
+    <p class="defense">
+      defense:
+      <fa-icon [icon]="faShieldHalved" class="fa-2x"></fa-icon>
+      {{ hero.defense }}
+    </p>
+    <p class="strength">
+      strength:
+      <fa-icon [icon]="faDumbbell" class="fa-2x"></fa-icon>
+      {{ hero.strength }}
+    </p>
+  </div>
 
   <hr />
   Items:

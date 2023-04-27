@@ -1,7 +1,11 @@
 import { Component, Input } from '@angular/core';
 import {
+  faDumbbell,
+  faExplosion,
   faHeart,
+  faPersonFallingBurst,
   faPersonRunning,
+  faShieldHalved,
   faSquarePen,
   faSquareXmark,
 } from '@fortawesome/free-solid-svg-icons';
@@ -27,6 +31,11 @@ export class HeroComponent {
 
   faHeart = faHeart;
   faPersonRunning = faPersonRunning;
+  faPersonFallingBurst = faPersonFallingBurst;
+  faExlosion = faExplosion;
+  faShieldHalved = faShieldHalved;
+  faDumbbell = faDumbbell;
+
   faSquarePen = faSquarePen;
   faSquareXmark = faSquareXmark;
 }

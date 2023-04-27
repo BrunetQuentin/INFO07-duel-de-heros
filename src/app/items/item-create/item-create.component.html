@@ -1,15 +1,60 @@
-<div *ngIf="item">
+<div *ngIf="item" class="item-create">
   <div>
     <label for="item-name">Item name:</label>
     <input id="item-name" [(ngModel)]="item.name" placeholder="name" />
   </div>
-  <div *ngIf="item.stats">
-    <div *ngFor="let stat of item.stats | keyvalue">
-      <label for="item-stat-value">Stat value:</label>
-      <input
-        id="item-stat-value{{ stat.key }}"
-        [(ngModel)]="item.stats[stat.key]"
-        placeholder="value" />
-    </div>
+  <div>
+    <label for="hero-health">Hero health:</label>
+    <input
+      id="item-stat-health"
+      [(ngModel)]="item.stats['health']"
+      placeholder="health"
+      (ngModelChange)="onChanges()"
+      type="number" />
+  </div>
+  <div>
+    <label for="hero-health">Hero health:</label>
+    <input
+      id="item-stat-health"
+      [(ngModel)]="item.stats['health']"
+      placeholder="health"
+      (ngModelChange)="onChanges()"
+      type="number" />
+  </div>
+  <div>
+    <label for="hero-health">Hero health:</label>
+    <input
+      id="item-stat-health"
+      [(ngModel)]="item.stats['health']"
+      placeholder="health"
+      (ngModelChange)="onChanges()"
+      type="number" />
+  </div>
+  <div>
+    <label for="hero-health">Hero health:</label>
+    <input
+      id="item-stat-health"
+      [(ngModel)]="item.stats['health']"
+      placeholder="health"
+      (ngModelChange)="onChanges()"
+      type="number" />
+  </div>
+  <div>
+    <label for="hero-health">Hero health:</label>
+    <input
+      id="item-stat-health"
+      [(ngModel)]="item.stats['health']"
+      placeholder="health"
+      (ngModelChange)="onChanges()"
+      type="number" />
+  </div>
+  <div>
+    <label for="hero-health">Hero health:</label>
+    <input
+      id="item-stat-health"
+      [(ngModel)]="item.stats['health']"
+      placeholder="health"
+      (ngModelChange)="onChanges()"
+      type="number" />
   </div>
 </div>

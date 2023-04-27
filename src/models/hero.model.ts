@@ -63,15 +63,22 @@ export const HeroSpecs: { [key in HeroTypes]?: SpecsType } = {
   },
 };
 
-export type IHero = {
+export interface IHeroStats {
+  health?: number;
+  speed?: number;
+  dodge?: number;
+  critical?: number;
+  defense?: number;
+  strength?: number;
+}
+
+export interface IHero extends IHeroStats {
   id?: string;
   name?: string;
   class?: HeroTypes[];
-  health?: number;
-  speed?: number;
   items?: any[];
   image?: string;
   abilities?: {
     [key in SupportSource & AttackSource]?: number;
   };
-};
+}

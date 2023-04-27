@@ -12,17 +12,15 @@ const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
   { path: 'heroes/:id', component: HeroCreateComponent },
   { path: 'heroes/:id/edit', component: HeroCreateComponent },
-  { path: 'heroes/new', component: HeroCreateComponent, data: { isNew: true } },
+  { path: 'heroes/new', component: HeroCreateComponent },
   { path: 'items', component: ItemsComponent },
   { path: 'items/:id', component: ItemCreateComponent },
   { path: 'items/:id/edit', component: ItemCreateComponent },
-  { path: 'items/new', component: ItemCreateComponent, data: { isNew: true } },
+  { path: 'items/new', component: ItemCreateComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {
-  
-}
+export class AppRoutingModule {}

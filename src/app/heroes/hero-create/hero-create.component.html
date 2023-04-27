@@ -2,17 +2,71 @@
   <div>
     <div>
       <label for="hero-name">Hero name:</label>
-      <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
-    </div>
-
-    <div>
-      <label for="hero-speed">Hero speed:</label>
-      <input id="hero-speed" [(ngModel)]="hero.speed" placeholder="speed" />
+      <input
+        id="hero-name"
+        [(ngModel)]="hero.name"
+        placeholder="name"
+        (ngModelChange)="onChanges()" />
     </div>
 
     <div>
       <label for="hero-health">Hero health:</label>
-      <input id="hero-health" [(ngModel)]="hero.health" placeholder="health" />
+      <input
+        id="hero-health"
+        [(ngModel)]="hero.health"
+        placeholder="health"
+        (ngModelChange)="onChanges()"
+        type="number" />
+    </div>
+
+    <div>
+      <label for="hero-speed">Hero speed:</label>
+      <input
+        id="hero-speed"
+        [(ngModel)]="hero.speed"
+        placeholder="speed"
+        (ngModelChange)="onChanges()"
+        type="number" />
+    </div>
+
+    <div>
+      <label for="hero-dodge">Hero dodge:</label>
+      <input
+        id="hero-dodge"
+        [(ngModel)]="hero.dodge"
+        placeholder="dodge"
+        (ngModelChange)="onChanges()"
+        type="number" />
+    </div>
+
+    <div>
+      <label for="hero-critical">Hero critical:</label>
+      <input
+        id="hero-critical"
+        [(ngModel)]="hero.critical"
+        placeholder="critical"
+        (ngModelChange)="onChanges()"
+        type="number" />
+    </div>
+
+    <div>
+      <label for="hero-defense">Hero defense:</label>
+      <input
+        id="hero-defense"
+        [(ngModel)]="hero.defense"
+        placeholder="defense"
+        (ngModelChange)="onChanges()"
+        type="number" />
+    </div>
+
+    <div>
+      <label for="hero-strength">Hero strength:</label>
+      <input
+        id="hero-strength"
+        [(ngModel)]="hero.strength"
+        placeholder="strength"
+        (ngModelChange)="onChanges()"
+        type="number" />
     </div>
 
     <div>
@@ -27,7 +81,7 @@
           *ngIf="hero.class"
           [(ngModel)]="hero.class[indexClass]"
           id="hero-class{{ indexClass }}"
-          (change)="onClassChange()"
+          (ngModelChange)="onChanges()"
           [disabled]="
             (hero.class[indexClass + 1] !== '' &&
               hero.class[indexClass + 1] !== undefined) ||
@@ -39,7 +93,8 @@
             [disabled]="
               class !== '' && hero.class.includes(class) && class !== c
             "
-            [selected]="class === c">
+            [selected]="class === c"
+            (change)="onChanges()">
             {{ class }}
           </option>
         </select>

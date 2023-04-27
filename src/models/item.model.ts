@@ -1,10 +1,10 @@
-import { AttackSource, SupportSource } from './hero.model';
+import { AttackSource, IHeroStats, SupportSource } from './hero.model';
 
 export type IItem = {
   id?: string;
   name?: string;
   stats?: {
-    [key in AttackSource & SupportSource as string]: number;
+    [key in IHeroStats as string]: number;
   };
   image?: string;
   passives?: passive[];

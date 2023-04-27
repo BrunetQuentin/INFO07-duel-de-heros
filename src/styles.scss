@@ -107,6 +107,7 @@ section {
 }
 body {
   line-height: 1;
+  height: 100vh;
 }
 ol,
 ul {
@@ -134,8 +135,20 @@ table {
 }
 
 body {
-  background: no-repeat url("assets/background.png") center center fixed;
+  background: no-repeat url('assets/background.png') center center fixed;
   background-size: cover;
+
+  animation: infinite 15s ease-in-out alternate blurBackground;
+  transition: all 0.5s ease-in-out;
+
+  @keyframes blurBackground {
+    from {
+      backdrop-filter: blur(0px);
+    }
+    to {
+      backdrop-filter: blur(10px);
+    }
+  }
 }
 
 .add-button {

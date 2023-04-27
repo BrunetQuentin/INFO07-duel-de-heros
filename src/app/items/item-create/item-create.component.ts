@@ -6,20 +6,16 @@ import { ItemService } from 'src/service/item.service';
 @Component({
   selector: 'app-item-create',
   templateUrl: './item-create.component.html',
-  styleUrls: ['./item-create.component.sass'],
+  styleUrls: ['./item-create.component.scss'],
 })
 export class ItemCreateComponent {
   item?: IItem;
-  isNew?: boolean;
+  isNew = this.activatedroute.snapshot.params['id'] === 'new';
 
   constructor(
     private activatedroute: ActivatedRoute,
     private itemService: ItemService
-  ) {
-    this.activatedroute.data.subscribe((data) => {
-      this.isNew = data['isNew'];
-    });
-  }
+  ) {}
 
   ngOnInit(): void {
     if (this.isNew) {
@@ -38,4 +34,6 @@ export class ItemCreateComponent {
         });
     }
   }
+
+  onChanges() {}
 }
