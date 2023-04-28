@@ -3,6 +3,11 @@
   style="background-image: url('{{ hero.image }}')"
   class="hero">
   <div class="header">
+    <fa-icon
+      [icon]="faCheck"
+      class="fa-2x"
+      [style.color]="isValid ? 'green' : 'red'"
+      title="{{ isValid ? 'Valid' : 'Not valid' }}"></fa-icon>
     <h2 class="title">{{ hero.name | uppercase }}</h2>
     <div class="buttons">
       <a [routerLink]="[hero.id, 'edit']">
@@ -56,9 +61,7 @@
   <hr />
   Items:
 
-  <div class="items">
-    <a *ngFor="let item of hero.items"><img src="" /></a>
-  </div>
+  <div class="items">{{ hero.item }}</div>
 
   <hr />
 

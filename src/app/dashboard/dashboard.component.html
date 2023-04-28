@@ -1,1 +1,65 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+  <h1>Heroes</h1>
+  <input
+    placeholder="search"
+    [(ngModel)]="heroFilter"
+    (ngModelChange)="onChanges('hero')" />
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>item</th>
+      <th>image</th>
+
+      <th>health</th>
+      <th>speed</th>
+      <th>dodge</th>
+      <th>critical</th>
+      <th>defense</th>
+      <th>strength</th>
+    </tr>
+    <tr *ngFor="let hero of heroesFiltered">
+      <td>{{ hero.name }}</td>
+      <td>{{ hero.item }}</td>
+      <td>{{ hero.image }}</td>
+
+      <td>{{ hero.health }}</td>
+      <td>{{ hero.speed }}</td>
+      <td>{{ hero.dodge }}</td>
+      <td>{{ hero.critical }}</td>
+      <td>{{ hero.defense }}</td>
+      <td>{{ hero.strength }}</td>
+    </tr>
+  </table>
+
+  <h1>Items</h1>
+  <input
+    placeholder="search"
+    [(ngModel)]="itemFilter"
+    (ngModelChange)="onChanges('item')" />
+  <table>
+    <tr>
+      <th>Name</th>
+
+      <th>health</th>
+      <th>speed</th>
+      <th>dodge</th>
+      <th>critical</th>
+      <th>defense</th>
+      <th>strength</th>
+
+      <th>image</th>
+    </tr>
+    <tr *ngFor="let item of itemsFiltered">
+      <td>{{ item.name }}</td>
+
+      <td>{{ item.stats!['health'] }}</td>
+      <td>{{ item.stats!['speed'] }}</td>
+      <td>{{ item.stats!['dodge'] }}</td>
+      <td>{{ item.stats!['critical'] }}</td>
+      <td>{{ item.stats!['defense'] }}</td>
+      <td>{{ item.stats!['strength'] }}</td>
+
+      <td>{{ item.image }}</td>
+    </tr>
+  </table>
+</div>

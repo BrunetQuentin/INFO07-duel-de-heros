@@ -2,15 +2,61 @@
   *ngIf="item"
   style="background-image: url('{{ item.image }}')"
   class="item">
-  <h2>{{ item.name }}</h2>
-  <hr />
-  Stats:
-  <div>
-    <a *ngFor="let stat of item.stats | keyvalue">
-      <span *ngIf="item.stats">{{ stat.key }}: {{ stat.value }}</span>
-    </a>
+  <div class="header">
+    <fa-icon
+      [icon]="faCheck"
+      class="fa-2x"
+      [style.color]="isValid ? 'green' : 'red'"
+      title="{{ isValid ? 'Valid' : 'Not valid' }}"></fa-icon>
+    <h2 class="title">{{ item.name | uppercase }}</h2>
+    <div class="buttons">
+      <a [routerLink]="[item.id, 'edit']">
+        <fa-icon
+          [icon]="faSquarePen"
+          class="fa-2x svg-button edit"
+          title="Editer le champion"></fa-icon>
+      </a>
+      <a (click)="deleteItem()">
+        <fa-icon
+          [icon]="faSquareXmark"
+          class="fa-2x svg-button delete"
+          title="Supprimer le hero"></fa-icon>
+      </a>
+    </div>
   </div>
-  <hr />
+
+  <div class="stats" *ngIf="item.stats">
+    <p class="health">
+      health:
+      <fa-icon [icon]="faHeart" class="fa-2x"></fa-icon>
+      {{ item.stats['health'] }}
+    </p>
+    <p class="speed">
+      speed:
+      <fa-icon [icon]="faPersonRunning" class="fa-2x"></fa-icon>
+      {{ item.stats['speed'] }}
+    </p>
+    <p class="dodge">
+      dodge:
+      <fa-icon [icon]="faPersonFallingBurst" class="fa-2x"></fa-icon>
+      {{ item.stats['dodge'] }}
+    </p>
+    <p class="critical">
+      critical:
+      <fa-icon [icon]="faExlosion" class="fa-2x"></fa-icon>
+      {{ item.stats['critical'] }}
+    </p>
+    <p class="defense">
+      defense:
+      <fa-icon [icon]="faShieldHalved" class="fa-2x"></fa-icon>
+      {{ item.stats['defense'] }}
+    </p>
+    <p class="strength">
+      strength:
+      <fa-icon [icon]="faDumbbell" class="fa-2x"></fa-icon>
+      {{ item.stats['strength'] }}
+    </p>
+  </div>
   Passive:
   <div>
     <a *ngFor="let passive of item.passives">

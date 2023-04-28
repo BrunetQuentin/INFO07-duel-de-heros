@@ -76,7 +76,7 @@ export interface IHero extends IHeroStats {
   id?: string;
   name?: string;
   class?: HeroTypes[];
-  items?: any[];
+  item?: string;
   image?: string;
   abilities?: {
     [key in SupportSource & AttackSource]?: number;

@@ -1,60 +1,72 @@
 <div *ngIf="item" class="item-create">
   <div>
     <label for="item-name">Item name:</label>
-    <input id="item-name" [(ngModel)]="item.name" placeholder="name" />
-  </div>
-  <div>
-    <label for="hero-health">Hero health:</label>
     <input
-      id="item-stat-health"
-      [(ngModel)]="item.stats['health']"
-      placeholder="health"
-      (ngModelChange)="onChanges()"
-      type="number" />
+      id="item-name"
+      [(ngModel)]="item.name"
+      placeholder="name"
+      (ngModelChange)="onChanges()" />
   </div>
-  <div>
-    <label for="hero-health">Hero health:</label>
-    <input
-      id="item-stat-health"
-      [(ngModel)]="item.stats['health']"
-      placeholder="health"
-      (ngModelChange)="onChanges()"
-      type="number" />
-  </div>
-  <div>
-    <label for="hero-health">Hero health:</label>
-    <input
-      id="item-stat-health"
-      [(ngModel)]="item.stats['health']"
-      placeholder="health"
-      (ngModelChange)="onChanges()"
-      type="number" />
-  </div>
-  <div>
-    <label for="hero-health">Hero health:</label>
-    <input
-      id="item-stat-health"
-      [(ngModel)]="item.stats['health']"
-      placeholder="health"
-      (ngModelChange)="onChanges()"
-      type="number" />
-  </div>
-  <div>
-    <label for="hero-health">Hero health:</label>
-    <input
-      id="item-stat-health"
-      [(ngModel)]="item.stats['health']"
-      placeholder="health"
-      (ngModelChange)="onChanges()"
-      type="number" />
-  </div>
-  <div>
-    <label for="hero-health">Hero health:</label>
-    <input
-      id="item-stat-health"
-      [(ngModel)]="item.stats['health']"
-      placeholder="health"
-      (ngModelChange)="onChanges()"
-      type="number" />
+  <div *ngIf="item.stats">
+    <div *ngIf="isValid" style="color: green">Item valid</div>
+    <div *ngIf="!isValid" style="color: red">
+      Item invalid ! (Must be equalized and not over 5)
+    </div>
+    <div>Point a dépensé: {{ points }}</div>
+    <div>
+      <label for="item-health">Item health:</label>
+      <input
+        id="item-stat-health"
+        [(ngModel)]="item.stats['health']"
+        placeholder="health"
+        (ngModelChange)="onChanges()"
+        type="number" />
+    </div>
+    <div>
+      <label for="item-speed">Item speed:</label>
+      <input
+        id="item-stat-speed"
+        [(ngModel)]="item.stats['speed']"
+        placeholder="speed"
+        (ngModelChange)="onChanges()"
+        type="number" />
+    </div>
+    <div>
+      <label for="item-dodge">Item dodge:</label>
+      <input
+        id="item-stat-dodge"
+        [(ngModel)]="item.stats['dodge']"
+        placeholder="dodge"
+        (ngModelChange)="onChanges()"
+        type="number" />
+    </div>
+    <div>
+      <label for="item-critical">Item critical:</label>
+      <input
+        id="item-stat-critical"
+        [(ngModel)]="item.stats['critical']"
+        placeholder="critical"
+        (ngModelChange)="onChanges()"
+        type="number" />
+    </div>
+    <div>
+      <label for="item-defense">Item defense:</label>
+      <input
+        id="item-stat-defense"
+        [(ngModel)]="item.stats['defense']"
+        placeholder="defense"
+        (ngModelChange)="onChanges()"
+        type="number" />
+    </div>
+    <div>
+      <label for="item-strength">Item strength:</label>
+      <input
+        id="item-stat-strength"
+        [(ngModel)]="item.stats['strength']"
+        placeholder="strength"
+        (ngModelChange)="onChanges()"
+        type="number" />
+    </div>
+    <button *ngIf="isNew" (click)="createItem()">Create</button>
   </div>
 </div>

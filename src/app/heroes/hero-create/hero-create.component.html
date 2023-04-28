@@ -1,5 +1,11 @@
-<div *ngIf="hero">
+<div *ngIf="hero" class="heroe-create">
   <div>
+    <div *ngIf="isValid" style="color: green">Hero valid</div>
+    <div *ngIf="!isValid" style="color: red">
+      Hero invalid ! (health, speed, dodge, critical, defense, strength must
+      have a total of 60 and at least 5 for each)
+    </div>
+    <div>Point utilisé : {{ usedPoints }} ({{ remainPoints }} restants)</div>
     <div>
       <label for="hero-name">Hero name:</label>
       <input
@@ -17,6 +23,7 @@
         placeholder="health"
         (ngModelChange)="onChanges()"
         type="number" />
+      {{ item && '(+' + item.stats!['health'] + ')' }}
     </div>
 
     <div>
@@ -27,6 +34,7 @@
         placeholder="speed"
         (ngModelChange)="onChanges()"
         type="number" />
+      {{ item && '(+' + item.stats!['speed'] + ')' }}
     </div>
 
     <div>
@@ -37,6 +45,7 @@
         placeholder="dodge"
         (ngModelChange)="onChanges()"
         type="number" />
+      {{ item && '(+' + item.stats!['dodge'] + ')' }}
     </div>
 
     <div>
@@ -47,6 +56,7 @@
         placeholder="critical"
         (ngModelChange)="onChanges()"
         type="number" />
+      {{ item && '(+' + item.stats!['critical'] + ')' }}
     </div>
 
     <div>
@@ -57,6 +67,7 @@
         placeholder="defense"
         (ngModelChange)="onChanges()"
         type="number" />
+      {{ item && '(+' + item.stats!['defense'] + ')' }}
     </div>
 
     <div>
@@ -67,6 +78,7 @@
         placeholder="strength"
         (ngModelChange)="onChanges()"
         type="number" />
+      {{ item && '(+' + item.stats!['strength'] + ')' }}
     </div>
 
     <div>
@@ -99,8 +111,19 @@
           </option>
         </select>
       </div>
-    </div>
 
-    <button *ngIf="isNew" (click)="createHero()">Create</button>
+      <label for="hero-weapon">Hero weapon:</label>
+      <select
+        id="hero-weapon"
+        [(ngModel)]="hero.item"
+        (ngModelChange)="onChangeItem()">
+        <option></option>
+        <option *ngFor="let item of allItems" [value]="item.id">
+          {{ item.name }}
+        </option>
+      </select>
+
+      <button *ngIf="isNew" (click)="createHero()">Create</button>
+    </div>
   </div>
 </div>

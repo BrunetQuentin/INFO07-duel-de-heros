@@ -45,9 +45,10 @@ export class HeroService {
     return hero;
   }
 
-  createHero(hero: IHero): void {
+  async createHero(hero: IHero): Promise<IHero> {
     delete hero.id;
-    this.heroCollection.add(hero);
+    const h = await this.heroCollection.add(hero);
+    return h;
   }
 
   deleteHero(hero: IHero): void {

@@ -43,11 +43,17 @@ export class ItemService {
     return item;
   }
 
-  createItem(item: IItem): void {
-    this.itemCollection.add(item);
+  async createItem(item: IItem): Promise<IItem> {
+    delete item.id;
+    const i = await this.itemCollection.add(item);
+    return i;
   }
 
   deleteItem(item: IItem): void {
     this.itemCollection.doc(item.id).delete();
+  }
+
+  updateItem(item: IItem): void {
+    this.itemCollection.doc(item.id).update(item);
   }
 }
